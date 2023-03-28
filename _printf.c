@@ -55,7 +55,7 @@ int _printf(const char *format, ...)
 				buff.arr[buff.length] = format[i];
 				buff.length += 1;
 			}
-			else if (format[i] == '\\')
+			else if (format[i] == ' ')
 			{
 				buff.arr[buff.length] = format[i];
 				buff.length += 1;

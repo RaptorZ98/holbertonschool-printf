@@ -4,11 +4,11 @@
 /**
  * struct Buff - A struct for the buffer and its used length
  * @length: used length of the buffer
- * @buff: the buffer
+ * @arr: the buffer
  */
 typedef struct Buff
 {
-	int length; 
+	int length;
 	char arr[1024];
 } Buff;
 

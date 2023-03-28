@@ -8,7 +8,7 @@
  * @buff: buffer
  */
 
- void get_c(va_list a, struct Buff *buff)
+void get_c(va_list a, struct Buff *buff)
 {
 	buff->arr[buff->length] = va_arg(a, int);
 	buff->length += 1;
