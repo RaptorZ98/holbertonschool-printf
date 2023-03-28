@@ -28,6 +28,5 @@ int _print(const char *format, ...);
 void get_c(va_list a, struct Buff *buff);
 void get_s(va_list a, struct Buff *buff);
 void get_d(va_list a, struct Buff *buff);
-void get_i(va_list a, struct Buff *buff);
 
 #endif

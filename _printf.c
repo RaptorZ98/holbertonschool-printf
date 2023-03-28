@@ -16,7 +16,7 @@ int _print(const char *format, ...)
 		{"c", get_c},
 		{"s", get_s},
 		{"d", get_d},
-		{"i", get_i}
+		{"i", get_d}
 	};
 	struct Buff buff;
 	va_list pf;
@@ -34,6 +34,11 @@ int _print(const char *format, ...)
 			i++;
 			while (format[i] == " ")
 				i++;
+			if (format[i] == '%')
+			{
+				buff.arr[buff.length] = format[i];
+				buff.length += 1;
+			}
 			for (n = 0; n < 4; n++)
 			{
 				if (format[i] == pct[n].op)
@@ -42,6 +47,20 @@ int _print(const char *format, ...)
 					i++;
 					break;
 				}
+			}
+		}
+		else if (format[i] == "\\");
+		{
+			i++;
+			if (format[i] == "\n")
+			{
+				buff.arr[buff.length] = format[i];
+				buff.length += 1;
+			}
+			else if (format[i] == "\\")
+			{
+				buff.arr[buff.length] = format[i];
+				buff.length += 1;
 			}
 		}
 		else
