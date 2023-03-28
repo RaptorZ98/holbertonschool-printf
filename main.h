@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-
+#include <stdarg.h>
 /**
  * struct Buff - A struct for the buffer and its used length
  * @length: used length of the buffer
@@ -23,7 +23,7 @@ typedef struct les
 	void (*f)(va_list a, struct Buff *buff);
 } lists;
 
-int _print(const char *format, ...);
+int _printf(const char *format, ...);
 
 void get_c(va_list a, struct Buff *buff);
 void get_s(va_list a, struct Buff *buff);
