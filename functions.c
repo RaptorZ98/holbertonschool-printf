@@ -15,12 +15,13 @@ void get_s(va_list a, struct Buff *buff)
 	char *sa;
 
 	sa = va_arg(a, char *);
-
-	for (as = 0; sa[as] != '\0'; as++)
+	if (sa != NULL)
 	{
-		 buff->arr[buff->length] = sa[as];
-
-		 buff->length += 1;
+		for (as = 0; sa[as] != '\0'; as++)
+		{
+			buff->arr[buff->length] = sa[as];
+			buff->length += 1;
+		}
 	}
 }
 

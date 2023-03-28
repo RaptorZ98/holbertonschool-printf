@@ -32,8 +32,6 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			while (format[i] == ' ')
-				i++;
 			if (format[i] == '%')
 			{
 				buff.arr[buff.length] = format[i];
@@ -70,6 +68,6 @@ int _printf(const char *format, ...)
 			i++;
 		}
 	}
-	write(1, buff.arr, (buff.length + 1));
-	return (buff.length + 1);
+	write(1, buff.arr, buff.length);
+	return (buff.length);
 }
