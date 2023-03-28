@@ -2,13 +2,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+/**
+ * get_c - adds a character to the buffer
+ * @a: function parameter
+ * @buff: buffer
+ */
 
-void get_c(va_list a, struct Buff *buff)
+ void get_c(va_list a, struct Buff *buff)
 {
 	buff->arr[buff->length] = va_arg(a, int);
 	buff->length += 1;
 }
-
+/**
+ * get_s - adds a character to the buffer
+ * @a: function parameter
+ * @buff: buffer
+ */
 void get_s(va_list a, struct Buff *buff)
 {
 	int as;
@@ -24,7 +33,11 @@ void get_s(va_list a, struct Buff *buff)
 		}
 	}
 }
-
+/**
+ * get_d - adds a character to the buffer
+ * @a: function parameter
+ * @buff: buffer
+ */
 void get_d(va_list a, struct Buff *buff)
 {
 	buff->arr[buff->length] = (va_arg(a, int) + '0');
