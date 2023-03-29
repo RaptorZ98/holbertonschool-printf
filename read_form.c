@@ -67,7 +67,7 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 		}
 		if (n == 4)
 		{
-			return (get_param(buff, i));
+			return (get_param(buff, i, format));
 		}
 	}
 	return (i);

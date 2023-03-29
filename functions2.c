@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
  * get_white - prints whitespace
@@ -25,7 +26,7 @@ int get_white(struct Buff *buff, int i)
  * @i: int
  * Return: int i
  */
-int get_param(struct Buff *buff, int i)
+int get_param(struct Buff *buff, int i, const char *format)
 {
 	buff->arr[buff->pos] = '%';
 	buff->pos += 1;
