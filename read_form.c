@@ -67,6 +67,8 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 		}
 		else if (format[i] == ' ')
 		{
+			i++;
+			return (i);
 		}
 		else
 		{
