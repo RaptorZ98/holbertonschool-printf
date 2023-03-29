@@ -18,16 +18,6 @@ void read_format(const char *format, va_list a, struct Buff *buff)
 		{
 			i = read_porcent(i, format, buff, a);
 		}
-		else if (format[i] == '\\')
-		{
-			i++;
-			if (format[i] == '\n')
-			{
-				buff->arr[buff->length] = format[i];
-				buff->length += 1;
-				i++;
-			}
-		}
 		else
 		{
 			buff->arr[buff->length] = format[i];
