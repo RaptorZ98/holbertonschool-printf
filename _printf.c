@@ -5,7 +5,7 @@
 #include <stdarg.h>
 
 /**
- * _print - prints
+ * _printf - prints
  * @format: the things to print
  * Return: the number of characters printed
  */
