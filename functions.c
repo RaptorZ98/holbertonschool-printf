@@ -40,6 +40,26 @@ void get_s(va_list a, struct Buff *buff)
  */
 void get_d(va_list a, struct Buff *buff)
 {
-	buff->arr[buff->length] = (va_arg(a, int) + '0');
-	buff->length += 1;
+	int i, n, num;
+
+	i = va_arg(a, int);
+	n = 1;
+
+	if (i < 0)
+	{
+		buff->arr[buff->length] = '-';
+		buff->length += 1;
+		num = i * -1;
+	}
+	else
+		num = i;
+	for (; num / n > 9; )
+		n *= 10;
+	for (; n != 0; )
+	{
+		buff->arr[buff->length] = ('0' + num / n);
+		buff->length += 1;
+		num %= n;
+		n /= 10;
+	}
 }
