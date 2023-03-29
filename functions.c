@@ -32,6 +32,15 @@ void get_s(va_list a, struct Buff *buff)
 			buff->length += 1;
 		}
 	}
+	else
+	{
+		sa = "(null)";
+		for (as = 0; sa[as] != '\0'; as++)
+		{
+			buff->arr[buff->length] = sa[as];
+			buff->length += 1;
+		}
+	}
 }
 /**
  * get_d - adds a character to the buffer
