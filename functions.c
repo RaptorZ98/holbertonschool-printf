@@ -63,7 +63,12 @@ void get_d(va_list a, struct Buff *buff)
 		n /= 10;
 	}
 }
-
+/**
+ * get_per - saves the percentage
+ * @buff: buffer
+ * @i: i
+ * Return: i
+ */
 int get_per(struct Buff *buff, int i)
 {
 	buff->arr[buff->length] = '%';
