@@ -7,7 +7,7 @@
  * @buff: the buffer
  */
 
-int read_format(const char *format, va_list a, struct Buff *buff)
+void read_format(const char *format, va_list a, struct Buff *buff)
 {
 	int i;
 
