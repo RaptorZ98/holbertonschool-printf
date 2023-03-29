@@ -32,7 +32,7 @@ int get_param(struct Buff *buff, int i, const char *format)
 	buff->arr[buff->pos] = '%';
 	buff->pos += 1;
 	check_buff(buff);
-	buff->arr[buff->pos + 1] = format[i];
+	buff->arr[buff->pos] = format[i];
 	buff->pos += 1;
 	check_buff(buff);
 	i++;
