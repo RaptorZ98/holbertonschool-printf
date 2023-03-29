@@ -25,7 +25,6 @@ void read_format(const char *format, va_list a, struct Buff *buff)
 			i++;
 		}
 	}
-	return (0);
 }
 
 /**
