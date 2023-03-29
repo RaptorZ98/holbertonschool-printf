@@ -17,6 +17,8 @@ void read_format(const char *format, va_list a, struct Buff *buff)
 		if (format[i] == '%')
 		{
 			i = read_porcent(i, format, buff, a);
+			if (i < 0)
+				return (-1);
 		}
 		else
 		{
@@ -52,10 +54,9 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 			return (get_per(buff, i));
 		else if (format[i] == ' ')
 		{
-			i++;
-			return (i);
+			return (-1);
 		}
-		for (n = 0; n < 5; n++)
+		for (n = 0; n < 4; n++)
 		{
 			if (format[i] == pct[n].op)
 			{
@@ -64,7 +65,7 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 				return (i);
 			}
 		}
-		if (n == 5)
+		if (n == 4)
 		{
 			buff->arr[buff->length] = '%';
 			buff->arr[buff->length + 1] = format[i];

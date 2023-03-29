@@ -14,12 +14,15 @@ int _printf(const char *format, ...)
 {
 	Buff buff;
 	va_list pf;
+	int n;
 
 	buff.length = 0;
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(pf, format);
-	read_format(format, pf, &buff);
+	n = read_format(format, pf, &buff);
+	if (n < 0)
+		return (-1);
 	write(1, buff.arr, buff.length);
 	va_end(pf);
 	return (buff.length);
