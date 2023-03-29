@@ -63,3 +63,11 @@ void get_d(va_list a, struct Buff *buff)
 		n /= 10;
 	}
 }
+
+int get_per(struct Buff *buff, int i)
+{
+	buff->arr[buff->length] = '%';
+	buff->length += 1;
+	i++;
+	return (i);
+}
