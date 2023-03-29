@@ -24,6 +24,7 @@ int get_white(struct Buff *buff, int i)
  * get_param - prints % and char
  * @buff: buffer
  * @i: int
+ * @format: format
  * Return: int i
  */
 int get_param(struct Buff *buff, int i, const char *format)
