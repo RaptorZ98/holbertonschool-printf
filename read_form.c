@@ -20,7 +20,7 @@ void read_format(const char *format, va_list a, struct Buff *buff)
 		}
 		else
 		{
-			buff->arr[buff->length] = format[i];
+			buff->arr[buff->pos] = format[i];
 			buff->pos += 1;
 			check_buff(buff);
 			buff->length += 1;
