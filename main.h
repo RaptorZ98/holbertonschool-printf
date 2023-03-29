@@ -24,6 +24,8 @@ typedef struct les
 } lists;
 
 int _printf(const char *format, ...);
+int read_porcent(int i, const char *format, struct Buff *buff, va_list a);
+void read_format(const char *format, va_list a, struct Buff *buff);
 
 void get_c(va_list a, struct Buff *buff);
 void get_s(va_list a, struct Buff *buff);

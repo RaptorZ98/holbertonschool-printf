@@ -9,36 +9,15 @@
 
 void read_format(const char *format, va_list a, struct Buff *buff)
 {
-	int i, n;
-	lists pct[] = {
-		{'c', get_c},
-		{'s', get_s},
-		{'d', get_d},
-		{'i', get_d}
-	};
+	int i;
 
 	i = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			if (format[i] == '%')
-			{
-				buff->arr[buff->length] = format[i];
-				buff.length += 1;
-			}
-			for (n = 0; n < 4; n++)
-			{
-				if (format[i] == pct[n].op)
-				{
-					pct[n]->f(a, buff);
-					i++;
-					break;
-				}
-			}
+			i = read_porcent(i, format, buff, a);
 		}
-	
 		else if (format[i] == '\\')
 		{
 			i++;
@@ -46,11 +25,7 @@ void read_format(const char *format, va_list a, struct Buff *buff)
 			{
 				buff->arr[buff->length] = format[i];
 				buff->length += 1;
-			}
-			else if (format[i] == ' ')
-			{
-				buff->arr[buff->length] = format[i];
-				buff->length += 1;
+				i++;
 			}
 		}
 		else
@@ -58,6 +33,48 @@ void read_format(const char *format, va_list a, struct Buff *buff)
 			buff->arr[buff->length] = format[i];
 			buff->length += 1;
 			i++;
+		}
+	}
+}
+
+/**
+ * read_porcent - looks for the correct function
+ * @i: int to look in format
+ * @format: string given
+ * @buff: buffer
+ * @a: va list
+ * Return: int i
+ */
+int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
+{
+	int n;
+	lists pct[] = {
+		{'c', get_c},
+		{'s', get_s},
+		{'d', get_d},
+		{'i', get_d}
+	};
+
+	i++;
+	if (format[i] == '%')
+	{
+		buff->arr[buff->length] = format[i];
+		buff->length += 1;
+		i++;
+	}
+	else if (format[i] == ' ')
+	{
+	}
+	else
+	{
+		for (n = 0; n < 4; n++)
+		{
+			if (format[i] == pct[n].op)
+			{
+				pct[n].f(a, buff);
+				i++;
+				return (i);
+			}
 		}
 	}
 }
