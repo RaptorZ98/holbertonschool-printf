@@ -10,7 +10,9 @@
 
 void get_c(va_list a, struct Buff *buff)
 {
-	buff->arr[buff->length] = va_arg(a, int);
+	buff->arr[buff->pos] = va_arg(a, int);
+	buff->pos += 1;
+	check_buff(buff);
 	buff->length += 1;
 }
 /**
@@ -28,7 +30,9 @@ void get_s(va_list a, struct Buff *buff)
 	{
 		for (as = 0; sa[as] != '\0'; as++)
 		{
-			buff->arr[buff->length] = sa[as];
+			buff->arr[buff->pos] = sa[as];
+			buff->pos += 1;
+			check_buff(buff);
 			buff->length += 1;
 		}
 	}
@@ -37,7 +41,9 @@ void get_s(va_list a, struct Buff *buff)
 		sa = "(null)";
 		for (as = 0; sa[as] != '\0'; as++)
 		{
-			buff->arr[buff->length] = sa[as];
+			buff->arr[buff->pos] = sa[as];
+			buff->pos += 1;
+			check_buff(buff);
 			buff->length += 1;
 		}
 	}
@@ -56,7 +62,9 @@ void get_d(va_list a, struct Buff *buff)
 
 	if (i < 0)
 	{
-		buff->arr[buff->length] = '-';
+		buff->arr[buff->pos] = '-';
+		buff->pos += 1;
+		check_buff(buff);
 		buff->length += 1;
 		num = i * -1;
 	}
@@ -66,7 +74,9 @@ void get_d(va_list a, struct Buff *buff)
 		n *= 10;
 	for (; n != 0; )
 	{
-		buff->arr[buff->length] = ('0' + num / n);
+		buff->arr[buff->pos] = ('0' + num / n);
+		buff->pos += 1;
+		check_buff(buff);
 		buff->length += 1;
 		num %= n;
 		n /= 10;
@@ -80,7 +90,9 @@ void get_d(va_list a, struct Buff *buff)
  */
 int get_per(struct Buff *buff, int i)
 {
-	buff->arr[buff->length] = '%';
+	buff->arr[buff->pos] = '%';
+	buff->pos += 1;
+	check_buff(buff);
 	buff->length += 1;
 	i++;
 	return (i);

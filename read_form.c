@@ -21,6 +21,8 @@ void read_format(const char *format, va_list a, struct Buff *buff)
 		else
 		{
 			buff->arr[buff->length] = format[i];
+			buff->pos += 1;
+			check_buff(buff);
 			buff->length += 1;
 			i++;
 		}
@@ -52,10 +54,7 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 			return (get_per(buff, i));
 		if (format[i] == ' ')
 		{
-			buff->arr[buff->length] = ' ';
-			buff->length += 1;
-			i++;
-			return (i);
+			return (get_white(buff, i));
 		}
 		for (n = 0; n < 4; n++)
 		{
@@ -68,11 +67,7 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 		}
 		if (n == 4)
 		{
-			buff->arr[buff->length] = '%';
-			buff->arr[buff->length + 1] = format[i];
-			i++;
-			buff->length += 2;
-			return (i);
+			return (get_param(buff, i));
 		}
 	}
 	return (i);
