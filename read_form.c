@@ -65,6 +65,7 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 		}
 		if (format[i] == ' ')
 			i++;
+			return (i);
 		if (n == 5)
 		{
 			buff->arr[buff->length] = '%';
