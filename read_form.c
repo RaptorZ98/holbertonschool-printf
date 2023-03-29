@@ -7,17 +7,18 @@
  * @buff: the buffer
  */
 
-void read_format(const char *format, va_list a, struct Buff *buff)
+int read_format(const char *format, va_list a, struct Buff *buff)
 {
 	int i;
+	int n;
 
 	i = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			i = read_porcent(i, format, buff, a);
-			if (i < 0)
+			n = read_porcent(i, format, buff, a);
+			if (n < 0)
 				return (-1);
 		}
 		else
@@ -27,6 +28,7 @@ void read_format(const char *format, va_list a, struct Buff *buff)
 			i++;
 		}
 	}
+	return (0);
 }
 
 /**
@@ -52,6 +54,8 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 	{
 		if (format[i] == '%')
 			return (get_per(buff, i));
+		if (format [i] == ' ')
+			return (-1);
 		for (n = 0; n < 4; n++)
 		{
 			if (format[i] == pct[n].op)
