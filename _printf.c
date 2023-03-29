@@ -21,5 +21,6 @@ int _printf(const char *format, ...)
 	va_start(pf, format);
 	read_format(format, pf, &buff);
 	write(1, buff.arr, buff.length);
+	va_end(pf);
 	return (buff.length);
 }
