@@ -59,7 +59,13 @@ void get_d(va_list a, struct Buff *buff)
 
 	i = va_arg(a, int);
 	n = 1;
-
+	if (i == 0)
+	{
+		buff->arr[buff->pos] = ('0' + 0);
+		buff->pos += 1;
+		check_buff(buff);
+		buff->length += 1;
+	}
 	if (i < 0)
 	{
 		buff->arr[buff->pos] = '-';
@@ -90,19 +96,31 @@ void get_d(va_list a, struct Buff *buff)
  */
 void get_dmin(struct Buff *buff, int i)
 {
-	int n;
+	int n, j, t, k, len;
+	char s[11];
 
-	n = -1;
-	for (; i / n > 9; )
-		n *= 10;
-	for (; n != 0; )
+	n = i;
+	len = 0;
+	while (n != 0)
 	{
-		buff->arr[buff->pos] = ('0' + i / n);
+		n /= 10;
+		len++;
+	}
+	n = i;
+	j = len - 1;
+	while (n != 0)
+	{
+		t = (n % 10) * -1;
+		s[len] = t + '0';
+		n /= 10;
+		j--;
+	}
+	for (k = 0; k < len; k++)
+	{	
+		buff->arr[buff->pos] = s[k];
 		buff->pos += 1;
 		check_buff(buff);
 		buff->length += 1;
-		i %= n;
-		n /= 10;
 	}
 }
 
