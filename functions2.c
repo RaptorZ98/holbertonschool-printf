@@ -52,3 +52,37 @@ void check_buff(struct Buff *buff)
 		buff->pos = 0;
 	}
 }
+
+/**
+ *
+ *
+ *
+ */
+void get_b(va_list a, struct Buff *buff)
+{
+	unsigned int l = 0, b = 0, c = 0;
+	char as[32];
+
+	l = va_arg(a, int);
+
+	if (l == 0)
+	{
+		buff->arr[buff->pos] = 0;
+		buff->pos += 1;
+		check_buff(buff);
+		buff->length += 1;
+	}
+	while (l > 0)
+	{
+		as[c] = (l % 2) + '0';
+		l = l / 2;
+		c++;
+	}
+	for (b = 0; b < c; b++)
+	{
+		buff->arr[buff->pos] = as[c - b - 1];
+		buff->pos += 1;
+		check_buff(buff);
+		buff->length += 1;
+	}
+}

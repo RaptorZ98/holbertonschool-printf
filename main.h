@@ -34,6 +34,7 @@ void check_buff(struct Buff *buff);
 int get_white(struct Buff *buff, int i);
 int get_per(struct Buff *buff, int i);
 int get_param(struct Buff *buff, int i, const char *format);
+void get_b(va_list a, struct Buff *buff);
 
 void get_dmin(struct Buff *buff, int i);
 void get_c(va_list a, struct Buff *buff);
