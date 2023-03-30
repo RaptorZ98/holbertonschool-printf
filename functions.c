@@ -55,7 +55,7 @@ void get_s(va_list a, struct Buff *buff)
  */
 void get_d(va_list a, struct Buff *buff)
 {
-	int i, n, num;
+	int i, n;
 
 	i = va_arg(a, int);
 	n = 1;
@@ -66,22 +66,46 @@ void get_d(va_list a, struct Buff *buff)
 		buff->pos += 1;
 		check_buff(buff);
 		buff->length += 1;
-		num = i * -1;
+		get_dmin(buff, i);
 	}
 	else
-		num = i;
-	for (; num / n > 9; )
+	{
+		for (; i / n > 9; )
+			n *= 10;
+		for (; n != 0; )
+		{
+			buff->arr[buff->pos] = ('0' + i / n);
+			buff->pos += 1;
+			check_buff(buff);
+			buff->length += 1;
+			i %= n;
+			n /= 10;
+		}
+	}
+}
+/**
+ * get_dmin - prints minus int
+ * @buff: buffer
+ * @i: integer
+ */
+void get_dmin(struct Buff *buff, int i)
+{
+	int n;
+
+	n = -1;
+	for (; i / n > 9; )
 		n *= 10;
 	for (; n != 0; )
 	{
-		buff->arr[buff->pos] = ('0' + num / n);
+		buff->arr[buff->pos] = ('0' + i / n);
 		buff->pos += 1;
 		check_buff(buff);
 		buff->length += 1;
-		num %= n;
+		i %= n;
 		n /= 10;
 	}
 }
+
 /**
  * get_per - saves the percentage
  * @buff: buffer
