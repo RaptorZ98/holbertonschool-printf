@@ -66,7 +66,7 @@ void get_d(va_list a, struct Buff *buff)
 		check_buff(buff);
 		buff->length += 1;
 	}
-	if (i < 0)
+	else if(i < 0)
 	{
 		buff->arr[buff->pos] = '-';
 		buff->pos += 1;
@@ -111,7 +111,7 @@ void get_dmin(struct Buff *buff, int i)
 	while (n != 0)
 	{
 		t = (n % 10) * -1;
-		s[len] = t + '0';
+		s[j] = t + '0';
 		n /= 10;
 		j--;
 	}
