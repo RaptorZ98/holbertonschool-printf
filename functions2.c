@@ -54,9 +54,9 @@ void check_buff(struct Buff *buff)
 }
 
 /**
- *
- *
- *
+ *get_b - adds binaries to the buffer
+ *@buff: buffer
+ *@a: function parameter
  */
 void get_b(va_list a, struct Buff *buff)
 {
