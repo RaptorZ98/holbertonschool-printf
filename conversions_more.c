@@ -10,6 +10,11 @@ void get_p(va_list a, struct Buff *buff)
 	char list[12];
 
 	i = va_arg(a, long int);
+	if (i == 0)
+	{
+		print_nill(buff);
+		return;
+	}
 	c = 0;
 	buff->arr[buff->pos] = '0';
 	buff->pos += 1;
@@ -59,7 +64,7 @@ void print_nill(struct Buff *buff)
 	}
 }
 /**
- *get_S - hexadecimal
+ *get_hex - hexadecimal
  *@a: the list of parameters
  *@buff: the struct with the buffer
  */
