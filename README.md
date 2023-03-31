@@ -6,10 +6,11 @@ The printf function is used to print a string of characters and give a specific 
 
 <table>
 <tr>
-<td> character</td>
-<td> meaning</td>
-</table>
+<td>Character</td>
+<td>Meaning</td>
+</tr>
 <tr>
-<td> c</td>
+<td>c</td>
 <td>Write a simple character</td>
+</table>
 
