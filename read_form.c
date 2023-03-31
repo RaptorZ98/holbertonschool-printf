@@ -45,7 +45,11 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 		{'s', get_s},
 		{'d', get_d},
 		{'i', get_d},
-		{'b', get_b}
+		{'b', get_b},
+		{'u', get_u},
+		{'o', get_o},
+		{'x', get_x},
+		{'X', get_X}
 	};
 
 	i++;

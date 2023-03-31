@@ -67,7 +67,7 @@ void get_b(va_list a, struct Buff *buff)
 
 	if (l == 0)
 	{
-		buff->arr[buff->pos] = 0;
+		buff->arr[buff->pos] = 0 + '0';
 		buff->pos += 1;
 		check_buff(buff);
 		buff->length += 1;

@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * struct Buff - A struct for the buffer and its used length
  * @length: used length of the buffer
@@ -41,4 +43,8 @@ void get_c(va_list a, struct Buff *buff);
 void get_s(va_list a, struct Buff *buff);
 void get_d(va_list a, struct Buff *buff);
 
+void get_u(va_list a, struct Buff *buff);
+void get_o(va_list a, struct Buff *buff);
+void get_x(va_list a, struct Buff *buff);
+void get_X(va_list a, struct Buff *buff);
 #endif
