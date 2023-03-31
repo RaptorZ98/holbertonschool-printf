@@ -48,7 +48,10 @@ void get_o(va_list a, struct Buff *buff);
 void get_x(va_list a, struct Buff *buff);
 void get_X(va_list a, struct Buff *buff);
 void get_p(va_list a, struct Buff *buff);
+void get_hex(va_list a, struct Buff *buff);
 
 char get_letter(unsigned int n, int i);
-void print_nill(void);
+void print_nill(struct Buff *buff);
+void make_hex(int a, struct Buff *buff);
+void print_assi(struct Buff *buff, int b);
 #endif
