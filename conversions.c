@@ -57,7 +57,7 @@ void get_o(va_list a, struct Buff *buff)
 	}
 	for (b = 0; b < c; b++)
 	{
-		buff->arr[buff->pos] = as[c - b - 1];
+		buff->arr[buff->pos] = list[c - b - 1];
 		buff->pos += 1;
 		check_buff(buff);
 		buff->length += 1;
