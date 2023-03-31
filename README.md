@@ -15,6 +15,7 @@ The printf function is used to print a string of characters and give a specific 
 <td>c</td>
 <td>Write a simple character</td>
 </table>
+<table>
 <tr>
 <td>s</td>
 <td>Type a string of characters</td>
