@@ -18,4 +18,16 @@ The printf function is used to print a string of characters and give a specific 
 <tr>
 <td>s</td>
 <td>Type a string of characters</td>
+</tr>
+<tr>
+<td>'%'</td>
+<td>prints a percentage</td>
+</tr>
+<tr>
+<td>d</td>
+<td>Write a signed decimal integer</td>
+</tr>
+<tr>
+<td>i</td>
+<td>Writes a signed decimal, octal or hexadecimal integer</td>
 </table>
