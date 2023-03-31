@@ -31,7 +31,7 @@ void get_p(va_list a, struct Buff *buff)
 		}
 		else
 		{
-			list [c] = p + '0';
+			list[c] = p + '0';
 			c++;
 		}
 		i /= 16;

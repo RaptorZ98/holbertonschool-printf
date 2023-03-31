@@ -173,5 +173,5 @@ char get_letter(unsigned int n, int i)
 		}
 		p++;
 	}
-	return('o');
+	return ('o');
 }
