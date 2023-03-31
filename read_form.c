@@ -49,7 +49,8 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 		{'u', get_u},
 		{'o', get_o},
 		{'x', get_x},
-		{'X', get_X}
+		{'X', get_X},
+		{'p', get_p}
 	};
 
 	i++;
@@ -61,7 +62,7 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 		{
 			return (get_white(buff, i));
 		}
-		for (n = 0; n < 9; n++)
+		for (n = 0; n < 10; n++)
 		{
 			if (format[i] == pct[n].op)
 			{
@@ -70,7 +71,7 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 				return (i);
 			}
 		}
-		if (n == 9)
+		if (n == 10)
 		{
 			return (get_param(buff, i, format));
 		}

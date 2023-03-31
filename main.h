@@ -47,6 +47,7 @@ void get_u(va_list a, struct Buff *buff);
 void get_o(va_list a, struct Buff *buff);
 void get_x(va_list a, struct Buff *buff);
 void get_X(va_list a, struct Buff *buff);
+void get_p(va_list a, struct Buff *buff);
 
 char get_letter(unsigned int n, int i);
 #endif
