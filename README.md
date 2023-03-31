@@ -64,3 +64,13 @@ The printf function is used to print a string of characters and give a specific 
     <td>carriage return</td>
   </tr>
 </table>
+
+<h2>Printf procedure</h2>
+
+<p>This function accepts an array of characters along with other arguments to print, and then processes the array of characters. During the process, each character is checked and a decision is made on how to handle it. The function returns the number of characters printed.
+
+While traversing the character array, the function checks if the current character is a percent sign (%). If it is not, it simply prints the current character and adds one to the counter. If the character is a percent sign, the function checks if the next character is also a percent sign. If it is, it just prints a percent sign and adds one to the counter. If the next character is not a percent sign, the function calls another function to make a decision on how to handle the character following the percent sign.
+
+The code looks for a match between the available formatting functions (the printf functions) and the character following the percent sign. If it finds a match, the corresponding function is called to print the given arguments. If there is no match, it simply prints the percent sign and the next character. Each formatting function also returns the number of characters printed, which are added to the main counter.
+
+The function continues to process the formatting array until it encounters a null character, which indicates the end of the array.</p>
