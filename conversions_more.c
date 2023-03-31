@@ -52,10 +52,10 @@ void get_p(va_list a, struct Buff *buff)
  */
 void print_nill(struct Buff *buff)
 {
-	char nill[6] = {'(', 'n', 'i', 'l', 'l', ')'};
+	char nill[5] = {'(', 'n', 'i', 'l', ')'};
 	int pos;
 
-	for (pos = 0; pos < 6; pos++)
+	for (pos = 0; pos < 5; pos++)
 	{
 		buff->arr[buff->pos] = nill[pos];
 		buff->pos += 1;
