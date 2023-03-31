@@ -30,4 +30,9 @@ The printf function is used to print a string of characters and give a specific 
 <tr>
 <td>i</td>
 <td>Writes a signed decimal, octal or hexadecimal integer</td>
+</tr>
+<tr>
+  <td>b</td>
+<td>prints a numbers in binary</td>
+  </tr>
 </table>
