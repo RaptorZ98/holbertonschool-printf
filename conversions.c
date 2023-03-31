@@ -13,10 +13,11 @@ void get_u(va_list a, struct Buff *buff)
 	n = 1;
 	if (i == 0)
 	{
-		buff->arr[buff->pos] = ('0' + 0);
+		buff->arr[buff->pos] = '0';
 		buff->pos += 1;
 		check_buff(buff);
 		buff->length += 1;
+		return;
 	}
 	while (i / n > 9)
 		n *= 10;
