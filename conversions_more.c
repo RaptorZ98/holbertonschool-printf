@@ -6,8 +6,8 @@
  */
 void get_p(va_list a, struct Buff *buff)
 {
-	long int i, b, c, p;
-	char list[16];
+	unsigned long int i, b, c, p;
+	char list[100];
 
 	i = va_arg(a, long int);
 	if (i == 0)
