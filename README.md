@@ -74,3 +74,16 @@ While traversing the character array, the function checks if the current charact
 The code looks for a match between the available formatting functions (the printf functions) and the character following the percent sign. If it finds a match, the corresponding function is called to print the given arguments. If there is no match, it simply prints the percent sign and the next character. Each formatting function also returns the number of characters printed, which are added to the main counter.
 
 The function continues to process the formatting array until it encounters a null character, which indicates the end of the array.</p>
+
+<h2>Flowcharts</h2>
+
+
+<h2>Contents of the folders</h2>
+<table>
+<tr>
+<td>Files</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>_printf</td>
+<td></td>
