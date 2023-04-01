@@ -54,4 +54,6 @@ char get_letter(unsigned int n, int i);
 void print_nill(struct Buff *buff);
 void make_hex(int a, struct Buff *buff);
 void print_assi(struct Buff *buff, int b);
+
+
 #endif
