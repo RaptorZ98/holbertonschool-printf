@@ -7,7 +7,7 @@
 void get_p(va_list a, struct Buff *buff)
 {
 	long int i, b, c, p;
-	char list[18];
+	char list[16];
 
 	i = va_arg(a, long int);
 	if (i == 0)
