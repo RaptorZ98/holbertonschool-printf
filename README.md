@@ -49,7 +49,7 @@ The printf function is used to print a string of characters and give a specific 
   </tr>
   <tr>
     <td>X</td>
-    <td>hacer</td>
+    <td>Is a specifier to print a value in hexadecimal format in uppercase letters.</td>
   </tr>
   <tr>
     <td>S</td>
@@ -61,8 +61,11 @@ The printf function is used to print a string of characters and give a specific 
   </tr>
   <tr>
     <td>r</td>
-    <td>carriage return</td>
+    <td>prints a string but in reverse</td>
   </tr>
+  <tr>
+  <td>R</td>
+  <td>prints the string but with rot13'ed</td>
 </table>
 
 <h2>Printf procedure</h2>
@@ -77,8 +80,7 @@ The function continues to process the formatting array until it encounters a nul
 
 <h2>Flowcharts</h2>
 
-<p align="center">
-
+[![Printf.png](https://i.postimg.cc/PfpDg93Y/Printf.png)](https://postimg.cc/grprRSP2)
 
 <h2>Contents of the folders</h2>
 <table>
@@ -88,4 +90,4 @@ The function continues to process the formatting array until it encounters a nul
 </tr>
 <tr>
 <td>_printf</td>
-<td></td>
+<td>g</td>
