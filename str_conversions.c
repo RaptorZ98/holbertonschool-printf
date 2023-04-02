@@ -35,19 +35,16 @@ void rot_print(va_list a, struct Buff *buff)
 	int pos;
 
 	str = va_arg(a, char *);
-	if (str != NULL)
-	{
-		for (pos = 0; str[pos] != '\0'; pos++)
-		{
-			if ((str[pos] > 64 && str[pos] < 78) || (str[pos] > 96 && str[pos] < 110))
-				str[pos] += 13;
-			else if ((str[pos] > 77 && str[pos] < 91) ||
-					(str[pos] > 109 && str[pos] < 123))
-			str[pos] -= 13;
-		}
-	}
-	else
+	if (str == NULL)
 		str = "(null)";
+	for (pos = 0; str[pos] != '\0'; pos++)
+	{
+		if ((str[pos] > 64 && str[pos] < 78) || (str[pos] > 96 && str[pos] < 110))
+			str[pos] += 13;
+		else if ((str[pos] > 77 && str[pos] < 91) ||
+				(str[pos] > 109 && str[pos] < 123))
+			str[pos] -= 13;
+	}
 	for (pos = 0; str[pos] != '\0'; pos++)
 	{
 		add_buff(buff, str[pos]);
