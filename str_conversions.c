@@ -31,25 +31,25 @@ void str_rev(va_list a, struct Buff *buff)
  */
 void rot_print(va_list a, struct Buff *buff)
 {
-	char *str;
 	int pos;
+	char *str;
 
 	str = va_arg(a, char *);
-
 	if (str == NULL)
 		str = "(null)";
 	for (pos = 0; str[pos] != '\0'; pos++)
 	{
 		if ((str[pos] >= 'A' && str[pos] <= 'M') ||
 				(str[pos] >= 'a' && str[pos] <= 'm'))
-			str[pos] = str[pos] + 13;
+		{
+			add_buff(buff, str[pos] + 13);
+			check_buff(buff);
+		}
 		else if ((str[pos] >= 'N' && str[pos] <= 'Z') ||
 				(str[pos] >= 'n' && str[pos] <= 'z'))
-			str[pos] = str[pos] - 13;
-	}
-	for (pos = 0; str[pos] != '\0'; pos++)
-	{
-		add_buff(buff, str[pos]);
-		check_buff(buff);
+		{
+			add_buff(buff, str[pos] - 13);
+			check_buff(buff);
+		}
 	}
 }
