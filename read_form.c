@@ -50,7 +50,8 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 		{'X', get_X},
 		{'p', get_p},
 		{'S', get_hex},
-		{'r', str_rev}
+		{'r', str_rev},
+		{'R', rot_print}
 	};
 
 	i++;
@@ -67,8 +68,7 @@ int read_porcent(int i, const char *format, struct Buff *buff, va_list a)
 			if (format[i] == pct[n].op)
 			{
 				pct[n].f(a, buff);
-				i++;
-				return (i);
+				return (i + 1);
 			}
 		}
 		if (n == 13)

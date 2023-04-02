@@ -39,10 +39,10 @@ void rot_print(va_list a, struct Buff *buff)
 		str = "(null)";
 	for (pos = 0; str[pos] != '\0'; pos++)
 	{
-		if ((str[pos] > 64 && str[pos] < 78) || (str[pos] > 96 && str[pos] < 110))
+		if ((str[pos] >= 'A' && str[pos] <= 'M') || (str[pos] >= 'a' && str[pos] <= 'm'))
 			str[pos] += 13;
-		else if ((str[pos] > 77 && str[pos] < 91) ||
-				(str[pos] > 109 && str[pos] < 123))
+		else if ((str[pos] >= 'N' && str[pos] <= 'Z') ||
+				(str[pos] >= 'n' && str[pos] <= 'z'))
 			str[pos] -= 13;
 	}
 	for (pos = 0; str[pos] != '\0'; pos++)
