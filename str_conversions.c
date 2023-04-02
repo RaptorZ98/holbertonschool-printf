@@ -5,6 +5,7 @@
  * @a: list of parameters
  * @buff: struct with the buff
  */
+
 void str_rev(va_list a, struct Buff *buff)
 {
 	char *strcopy;
@@ -49,7 +50,7 @@ void rot_print(va_list a, struct Buff *buff)
 		str = "(null)";
 	for (pos = 0; str[pos] != '\0'; pos++)
 	{
-		add_buff(buff, str[pos];
+		add_buff(buff, str[pos]);
 		check_buff(buff);
 	}
 }

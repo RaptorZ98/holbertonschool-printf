@@ -130,7 +130,7 @@ The first function adds a blank space to the buffer, the second adds a percentag
 The first one inverts a text string and adds it to the buff output buffer and the second one encodes a text string in the format "rot13" and adds it to the buff output buffer.</td>
   </tr>
   </table>
-  
+
   <h2>Authors</h2>
 <h4><a href="https://github.com/RaptorZ98"target="_blank">Federico Heuer</a></h4>
 <h4><a href="https://github.com/20Emi"target="_blank">Emily Sánchez</a></h4>
