@@ -77,6 +77,8 @@ The function continues to process the formatting array until it encounters a nul
 
 <h2>Flowcharts</h2>
 
+<p align="center">
+
 
 <h2>Contents of the folders</h2>
 <table>
