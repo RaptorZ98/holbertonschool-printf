@@ -132,5 +132,5 @@ The first one inverts a text string and adds it to the buff output buffer and th
   </table>
   
   <h2>Authors</h2>
-  <h3>[Federico Heuer]https://github.com/RaptorZ98</h3>
-  <h5>20Emi</h5>
+<h4><a href="https://github.com/RaptorZ98"target="_blank">Federico Heuer</a></h4>
+<h4><a href="https://github.com/20Emi"target="_blank">Emily Sánchez</a></h4>
