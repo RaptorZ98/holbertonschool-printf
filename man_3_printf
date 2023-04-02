@@ -45,7 +45,7 @@ void rot_print(va_list a, struct Buff *buff);
 
 .SH DESCRIPTION FUNTIONS
 
--read_porcent:Reads the '%' character and processes the next 
+-read_porcent:Reads the '%' character and processes the next
 				format character in the format string.
 
 -read_format:Reads the format string format and processes each format character
@@ -56,10 +56,10 @@ void rot_print(va_list a, struct Buff *buff);
 			capacity and prints it if needed.
 
 -get_white, get_per and get_param:auxiliary functions used by the
-								'read_porcent()' function to process 
+								'read_porcent()' function to process
 								the different formatting characters.
 
--get_letter:Converts a number n to a hexadecimal letter and returns it 
+-get_letter:Converts a number n to a hexadecimal letter and returns it
 			as a character.
 
 -print_nill:Prints the character string "(nil)" in the output buffer buff.
@@ -69,7 +69,7 @@ void rot_print(va_list a, struct Buff *buff);
 
 print_assi: prints the character string "0x" followed by an integer b in hexadecimal format in the buff output buffer.
 .SH DESCRIPTION
-	
+
 The printf function is used to print a string of characters and give a specific
 format to the text. When using this function, you must provide a character
 string that contains both the text to be printed and the desired formatting.
@@ -88,8 +88,8 @@ format specifier, among others.
 %u -Writes an unsigned decimal integer
 %o -Writes an octal integer, without a leading zero
 %x -Writes a hexadecimal integer without the prefix 0x
-%X -Is a specifier to print a value in hexadecimal format in uppercase letters. 
-%S -Generates an array of characters and replaces any character that cannot 
+%X -Is a specifier to print a value in hexadecimal format in uppercase letters.
+%S -Generates an array of characters and replaces any character that cannot
 	be printed with its hexadecimal representation
 %p -Used to print pointer type data
 %r -Prints a string but in reverse
@@ -106,7 +106,7 @@ void get_s(va_list a, struct Buff *buff)
 {
 	int as;
 	char *sa;
-	
+
 	sa = va_arg(a, char *);
 	if (sa == NULL)
 			sa = "(null)";
@@ -114,7 +114,7 @@ void get_s(va_list a, struct Buff *buff)
 	{
 		add_buff(sa[as]);
 		check_buff(buff);
-	}					
+	}
 }
 
 AUTHORS

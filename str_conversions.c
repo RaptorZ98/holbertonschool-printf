@@ -35,15 +35,17 @@ void rot_print(va_list a, struct Buff *buff)
 	int pos;
 
 	str = va_arg(a, char *);
+
 	if (str == NULL)
 		str = "(null)";
 	for (pos = 0; str[pos] != '\0'; pos++)
 	{
-		if ((str[pos] >= 'A' && str[pos] <= 'M') || (str[pos] >= 'a' && str[pos] <= 'm'))
-			str[pos] += 13;
+		if ((str[pos] >= 'A' && str[pos] <= 'M') ||
+				(str[pos] >= 'a' && str[pos] <= 'm'))
+			str[pos] = str[pos] + 13;
 		else if ((str[pos] >= 'N' && str[pos] <= 'Z') ||
 				(str[pos] >= 'n' && str[pos] <= 'z'))
-			str[pos] -= 13;
+			str[pos] = str[pos] - 13;
 	}
 	for (pos = 0; str[pos] != '\0'; pos++)
 	{
