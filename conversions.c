@@ -13,20 +13,16 @@ void get_u(va_list a, struct Buff *buff)
 	n = 1;
 	if (i == 0)
 	{
-		buff->arr[buff->pos] = '0';
-		buff->pos += 1;
+		add_buff(buff, '0');
 		check_buff(buff);
-		buff->length += 1;
 		return;
 	}
 	while (i / n > 9)
 		n *= 10;
 	while (n != 0)
 	{
-		buff->arr[buff->pos] = ('0' + i / n);
-		buff->pos += 1;
+		add_buff(buff, ('0' + i / n));
 		check_buff(buff);
-		buff->length += 1;
 		i %= n;
 		n /= 10;
 	}
@@ -45,10 +41,8 @@ void get_o(va_list a, struct Buff *buff)
 	c = 0;
 	if (i == 0)
 	{
-		buff->arr[buff->pos] = ('0' + 0);
-		buff->pos += 1;
+		add_buff(buff, '0');
 		check_buff(buff);
-		buff->length += 1;
 	}
 	while (i > 0)
 	{
@@ -58,10 +52,8 @@ void get_o(va_list a, struct Buff *buff)
 	}
 	for (b = 0; b < c; b++)
 	{
-		buff->arr[buff->pos] = list[c - b - 1];
-		buff->pos += 1;
+		add_buff(buff, list[c - b - 1]);
 		check_buff(buff);
-		buff->length += 1;
 	}
 }
 /**
@@ -78,10 +70,8 @@ void get_x(va_list a, struct Buff *buff)
 	c = 0;
 	if (i == 0)
 	{
-		buff->arr[buff->pos] = 0 + '0';
-		buff->pos += 1;
+		add_buff(buff, '0');
 		check_buff(buff);
-		buff->length += 1;
 	}
 	while (i > 0)
 	{
@@ -100,10 +90,8 @@ void get_x(va_list a, struct Buff *buff)
 	}
 	for (b = 0; b < c; b++)
 	{
-		buff->arr[buff->pos] = list[c - b - 1];
-		buff->pos += 1;
+		add_buff(buff, list[c - b - 1]);
 		check_buff(buff);
-		buff->length += 1;
 	}
 }
 /**
@@ -120,10 +108,8 @@ void get_X(va_list a, struct Buff *buff)
 	c = 0;
 	if (i == 0)
 	{
-		buff->arr[buff->pos] = 0 + '0';
-		buff->pos += 1;
+		add_buff(buff, '0');
 		check_buff(buff);
-		buff->length += 1;
 	}
 	while (i > 0)
 	{
@@ -142,10 +128,8 @@ void get_X(va_list a, struct Buff *buff)
 	}
 	for (b = 0; b < c; b++)
 	{
-		buff->arr[buff->pos] = list[c - b - 1];
-		buff->pos += 1;
+		add_buff(buff, list[c - b - 1]);
 		check_buff(buff);
-		buff->length += 1;
 	}
 }
 /**

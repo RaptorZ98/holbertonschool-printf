@@ -16,13 +16,11 @@ void get_p(va_list a, struct Buff *buff)
 		return;
 	}
 	c = 0;
-	buff->arr[buff->pos] = '0';
-	buff->pos += 1;
+	add_buff(buff, '0');
 	check_buff(buff);
-	buff->arr[buff->pos] = 'x';
-	buff->pos += 1;
+	add_buff(buff, 'x');
 	check_buff(buff);
-	buff->length += 2;
+
 	while (i > 0)
 	{
 		p = i % 16;
@@ -40,10 +38,8 @@ void get_p(va_list a, struct Buff *buff)
 	}
 	for (b = 0; b < c; b++)
 	{
-		buff->arr[buff->pos] = list[c - b - 1];
-		buff->pos += 1;
+		add_buff(buff, list[c - b - 1]);
 		check_buff(buff);
-		buff->length += 1;
 	}
 }
 /**
@@ -57,10 +53,8 @@ void print_nill(struct Buff *buff)
 
 	for (pos = 0; pos < 5; pos++)
 	{
-		buff->arr[buff->pos] = nill[pos];
-		buff->pos += 1;
+		add_buff(buff, nill[pos]);
 		check_buff(buff);
-		buff->length += 1;
 	}
 }
 /**
@@ -80,10 +74,8 @@ void get_hex(va_list a, struct Buff *buff)
 		hex = "(null)";
 		for (hex = 0; hex[num] != '\0'; num++)
 		{
-			buff->arr[buff->pos] = hex[num];
-			buff->pos += 1;
+			add_buff(buff, hex[num]);
 			check_buff(buff);
-			buff->length += 1;
 		}
 	}
 	for (num = 0; hex[num] != '\0'; num++)
@@ -95,10 +87,8 @@ void get_hex(va_list a, struct Buff *buff)
 		}
 		else
 		{
-			buff->arr[buff->pos] = hex[num];
-			buff->pos += 1;
+			add_buff(buff, hex[num]);
 			check_buff(buff);
-			buff->length += 1;
 		}
 }
 /**
@@ -131,10 +121,8 @@ void make_hex(int a, struct Buff *buff)
 	}
 	for (b = 0; b < c; b++)
 	{
-		buff->arr[buff->pos] = list[c - b - 1];
-		buff->pos += 1;
+		add_buff(buff, list[c - b - 1]);
 		check_buff(buff);
-		buff->length += 1;
 	}
 }
 /**
@@ -151,10 +139,8 @@ void print_assi(struct Buff *buff, int b)
 	{
 		if (ls <= 1 || (ls == 2 && b < 16))
 		{
-			buff->arr[buff->pos] = lista[ls];
-			buff->pos += 1;
+			add_buff(buff, lista[ls]);
 			check_buff(buff);
-			buff->length += 1;
 		}
 	}
 }

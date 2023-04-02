@@ -12,12 +12,9 @@
 
 int get_white(struct Buff *buff, int i)
 {
-	buff->arr[buff->pos] = ' ';
-	buff->pos += 1;
+	add_buff(buff, ' ');
 	check_buff(buff);
-	buff->length += 1;
-	i++;
-	return (i);
+	return (i + 1);
 }
 
 /**
@@ -29,32 +26,16 @@ int get_white(struct Buff *buff, int i)
  */
 int get_param(struct Buff *buff, int i, const char *format)
 {
-	buff->arr[buff->pos] = '%';
-	buff->pos += 1;
+	add_buff(buff, '%');
 	check_buff(buff);
-	buff->arr[buff->pos] = format[i];
-	buff->pos += 1;
+	add_buff(buff, format[i]);
 	check_buff(buff);
-	i++;
-	buff->length += 2;
-	return (i);
+	return (i + 1);
 }
 
-/**
- * check_buff - checks if buffer is full
- * @buff: buffer
- */
-void check_buff(struct Buff *buff)
-{
-	if (buff->pos == 1024)
-	{
-		write(1, buff->arr, 1024);
-		buff->pos = 0;
-	}
-}
 
 /**
- *get_b - adds binaries to the buffer
+ *get_b - transforms an unsigned int to binary
  *@buff: buffer
  *@a: function parameter
  */
@@ -67,10 +48,8 @@ void get_b(va_list a, struct Buff *buff)
 
 	if (l == 0)
 	{
-		buff->arr[buff->pos] = 0 + '0';
-		buff->pos += 1;
+		add_buff(buff, '0');
 		check_buff(buff);
-		buff->length += 1;
 	}
 	while (l > 0)
 	{
@@ -80,9 +59,7 @@ void get_b(va_list a, struct Buff *buff)
 	}
 	for (b = 0; b < c; b++)
 	{
-		buff->arr[buff->pos] = as[c - b - 1];
-		buff->pos += 1;
+		add_buff(buff, as[c - b - 1]);
 		check_buff(buff);
-		buff->length += 1;
 	}
 }

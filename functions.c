@@ -10,13 +10,12 @@
 
 void get_c(va_list a, struct Buff *buff)
 {
-	buff->arr[buff->pos] = va_arg(a, int);
-	buff->pos += 1;
+	add_buff(va_arg(a, int));
 	check_buff(buff);
-	buff->length += 1;
 }
+
 /**
- * get_s - adds a character to the buffer
+ * get_s - adds a string to the buffer
  * @a: function parameter
  * @buff: buffer
  */
@@ -26,101 +25,58 @@ void get_s(va_list a, struct Buff *buff)
 	char *sa;
 
 	sa = va_arg(a, char *);
-	if (sa != NULL)
-	{
-		for (as = 0; sa[as] != '\0'; as++)
-		{
-			buff->arr[buff->pos] = sa[as];
-			buff->pos += 1;
-			check_buff(buff);
-			buff->length += 1;
-		}
-	}
-	else
-	{
+	if (sa == NULL)
 		sa = "(null)";
-		for (as = 0; sa[as] != '\0'; as++)
-		{
-			buff->arr[buff->pos] = sa[as];
-			buff->pos += 1;
-			check_buff(buff);
-			buff->length += 1;
-		}
+	for (as = 0; sa[as] != '\0'; as++)
+	{
+		add_buff(sa[as]);
+		check_buff(buff);
 	}
 }
+
 /**
- * get_d - adds a character to the buffer
+ * get_d - adds an integer to the buffer
  * @a: function parameter
  * @buff: buffer
  */
 void get_d(va_list a, struct Buff *buff)
 {
-	int i, n;
+	int i, n, k, len = 0, pos, chaint;
+	char intstr[11];
 
 	i = va_arg(a, int);
-	n = 1;
+	n = i;
 	if (i == 0)
 	{
-		buff->arr[buff->pos] = ('0' + 0);
-		buff->pos += 1;
+		add_buff('0');
 		check_buff(buff);
-		buff->length += 1;
 	}
-	else if (i < 0)
+	if (i < 0)
 	{
-		buff->arr[buff->pos] = '-';
-		buff->pos += 1;
+		add_buff('-');
 		check_buff(buff);
-		buff->length += 1;
-		get_dmin(buff, i);
 	}
-	else
-	{
-		for (; i / n > 9; )
-			n *= 10;
-		for (; n != 0; )
-		{
-			buff->arr[buff->pos] = ('0' + i / n);
-			buff->pos += 1;
-			check_buff(buff);
-			buff->length += 1;
-			i %= n;
-			n /= 10;
-		}
-	}
-}
-/**
- * get_dmin - prints minus int
- * @buff: buffer
- * @i: integer
- */
-void get_dmin(struct Buff *buff, int i)
-{
-	int n, j, t, k, len;
-	char s[11];
-
-	n = i;
-	len = 0;
 	while (n != 0)
 	{
 		n /= 10;
 		len++;
 	}
+	pos = len - 1;
 	n = i;
-	j = len - 1;
 	while (n != 0)
 	{
-		t = (n % 10) * -1;
-		s[j] = t + '0';
+		if (n > 0)
+			chaint = n % 10;
+		else
+			chaint = (n % 10) * -1;
+		intstr[pos] = chaint + '0';
 		n /= 10;
-		j--;
+		pos--;
 	}
 	for (k = 0; k < len; k++)
 	{
-		buff->arr[buff->pos] = s[k];
-		buff->pos += 1;
+		add_buff(intstr[k]);
 		check_buff(buff);
-		buff->length += 1;
 	}
 }
 

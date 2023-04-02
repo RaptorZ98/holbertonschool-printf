@@ -1,8 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
 
 /**
  * _printf - prints
@@ -17,8 +13,10 @@ int _printf(const char *format, ...)
 
 	buff.length = 0;
 	buff.pos = 0;
+
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
+
 	va_start(pf, format);
 	read_format(format, pf, &buff);
 	write(1, buff.arr, buff.pos);

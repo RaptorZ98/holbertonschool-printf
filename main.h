@@ -3,6 +3,9 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+
+
 /**
  * struct Buff - A struct for the buffer and its used length
  * @length: used length of the buffer
@@ -16,6 +19,8 @@ typedef struct Buff
 	char arr[1024];
 } Buff;
 
+
+
 /**
  * struct les - a struct for the functions to use in each case
  * @op: the char to detect
@@ -26,6 +31,8 @@ typedef struct les
 	char op;
 	void (*f)(va_list a, struct Buff *buff);
 } lists;
+
+
 
 int _printf(const char *format, ...);
 int read_porcent(int i, const char *format, struct Buff *buff, va_list a);
@@ -38,7 +45,6 @@ int get_per(struct Buff *buff, int i);
 int get_param(struct Buff *buff, int i, const char *format);
 void get_b(va_list a, struct Buff *buff);
 
-void get_dmin(struct Buff *buff, int i);
 void get_c(va_list a, struct Buff *buff);
 void get_s(va_list a, struct Buff *buff);
 void get_d(va_list a, struct Buff *buff);
@@ -55,5 +61,8 @@ void print_nill(struct Buff *buff);
 void make_hex(int a, struct Buff *buff);
 void print_assi(struct Buff *buff, int b);
 
+void add_buff(struct Buff *buff, char a);
 void str_rev(va_list a, struct Buff *buff);
+void rot_print(va_list a, struct Buff *buff);
+
 #endif
