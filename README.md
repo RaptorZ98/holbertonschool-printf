@@ -57,7 +57,7 @@ The printf function is used to print a string of characters and give a specific 
   </tr>
   <tr>
   <td>p</td>
-  <td>indicates that the next argument in the argument list is a pointer and that its memory address is to be displayed in hexadecimal format./td>
+  <td>indicates that the next argument in the argument list is a pointer and that its memory address is to be displayed in hexadecimal format.</td>
   </tr>
   <tr>
     <td>r</td>
