@@ -29,7 +29,7 @@ The printf function is used to print a string of characters and give a specific 
 </tr>
 <tr>
 <td>i</td>
-<td>Writes a signed decimal, octal or hexadecimal integer</td>
+<td>print integer</td>
 </tr>
 <tr>
   <td>b</td>
@@ -45,7 +45,7 @@ The printf function is used to print a string of characters and give a specific 
   </tr>
   <tr>
     <td>x</td>
-    <td>Writes a hexadecimal integer without the prefix 0x</td>
+    <td>It is a specifier to print a value in hexadecimal format in lowercase.</td>
   </tr>
   <tr>
     <td>X</td>
@@ -57,7 +57,7 @@ The printf function is used to print a string of characters and give a specific 
   </tr>
   <tr>
   <td>p</td>
-  <td>Used to print pointer type data</td>
+  <td>indicates that the next argument in the argument list is a pointer and that its memory address is to be displayed in hexadecimal format./td>
   </tr>
   <tr>
     <td>r</td>
@@ -95,7 +95,7 @@ The function continues to process the formatting array until it encounters a nul
 <tr>
   <td>read_form.c</td>
   <td>Such a folder contains two functions, "read_format" and "read_porcent".
-the first function is in charge of reading the format and processing it to print the corresponding values. if the current character is a "%" the function "read_porcent" is called to process the corresponding conversion.
+the first function is in charge of reading the format and processing it to print the corresponding values. if the current character is a '%' the function "read_porcent" is called to process the corresponding conversion.
 The second function searches for the corresponding conversion type in a list of options and calls the corresponding function to process the variable argument. If no corresponding conversion is found, a generic function is called to print the character '%' and any other characters following it.</td>
   </tr>
   <tr>
@@ -109,26 +109,29 @@ The "check_buff" function checks if the buffer is full and the "add_buff" functi
   </tr>
   <tr>
   <td>conversions.c</td>
-  <td>This file defines some functions that convert an unsigned number to a string representation. In particular, the functions 'get_u', 'get_o', 'get_x,' and 'get_X,' are defined, each of which converts the number into a different format: unsigned decimal (get_u), octal (get_o), lowercase hexadecimal (get_x), and uppercase hexadecimal (get_X). In addition, there is an auxiliary function get_letter that is used to get the correct letter corresponding to the hexadecimal digit.</td>
+  <td>This file defines some functions that convert an unsigned number to a string representation. In particular, the functions "get_u", "get_o", "get_x", "get_X," and "get_b". are defined, each of which converts the number into a different format: unsigned decimal (get_u), octal (get_o), lowercase hexadecimal (get_x), uppercase hexadecimal (get_X) and converts an unsigned integer into its binary representation and adds it to the buffer (get_b).</td>
   </tr>
   <tr>
-  <td>conversions_more.c</td>
-  <td>The file contains functions that are used to print values in different formats, such as memory addresses (get_p), hexadecimal numbers (get_hex) and allocated numbers (print_assi), and to print the word "nil" if the passed value is null (print_nill).</td>
+  <td>aux_fuctions.c</td>
+  <td>This file contains functions for manipulating strings and appending text to a buffer. The "get_letter" function is used to get a letter from a numeric value and an additional parameter. The other two functions "print_nill" is used to print the word "nil" if the passed value is null and print_assi for assigned numbers.</td>
   </tr>
   <tr>
-  <td>functions.c</td>
-  <td>Such a file contains a number of functions that are used to format and write data to a buffer. These functions are called by another function that is responsible for parsing a format string and calling the appropriate functions according to the types of data found in the string.contains a number of functions that are used to format and write data to a buffer. These functions are called by another function that is responsible for parsing a format string and calling the appropriate functions based on the types of data found in the string.</td>
+  <td>mandatory_functions.c</td>
+  <td>The file contains functions and a variable list of arguments, and produces a string from them.
+It consists of three functions: "get_c", "get_s" and "get_d". The 'get_c' function adds a character to the buffer structure. The 'get_s' function adds a string to the buffer structure and the 'get_d' function adds an integer to the buffer structure.</td>
   </tr>
   <tr>
-  <td>functions2.c</td>
-  <td>This file contains three functions 'get_white', 'get_param' and 'get_b'.
-The first function adds a blank space to the buffer, the second adds a percentage character and the corresponding character in a format string to the buffer, and the third converts an unsigned integer into its binary representation and adds it to the buffer.</td>
+  <td>percentage_behaviour.c</td>
+  <td>Such a file contains three functions, the first function, "get_per", simply adds the character '%' to the buffer and checks if it is full. The second function, "get_white", adds a blank space to the buffer and also checks if it is full. The third function, "get_param", adds a '%' character and the character corresponding to the "i" position of the string "format" to the buffer and then checks if it is full.</td>
   </tr>
   <tr>
   <td>str_conversions.c</td>
-  <td>This file contains two functions 'str_rev' and 'rot_print', both functions accept a list of parameters and a buffer structure.
+  <td>This file contains two functions "str_rev" and "rot_print", both functions accept a list of parameters and a buffer structure.
 The first one inverts a text string and adds it to the buff output buffer and the second one encodes a text string in the format "rot13" and adds it to the buff output buffer.</td>
   </tr>
+  <tr>
+    <td>more_conversions.c</td>
+    <td>Such a file contains three functions, the "get_p" function converts a memory address value to its hexadecimal representation, the "get_hex" function is used to print a character string in hexadecimal format and the "make_hex" function converts a numeric value to its hexadecimal representation.</td>
   </table>
 
   <h2>Authors</h2>
