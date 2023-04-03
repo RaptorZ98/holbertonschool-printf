@@ -51,5 +51,10 @@ void rot_print(va_list a, struct Buff *buff)
 			add_buff(buff, str[pos] - 13);
 			check_buff(buff);
 		}
+		else
+		{
+			add_buff(buff, str[pos]);
+			check_buff(buff);
+		}
 	}
 }
