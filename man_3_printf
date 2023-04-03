@@ -46,7 +46,7 @@ void rot_print(va_list a, struct Buff *buff);
 .SH DESCRIPTION FUNTIONS
 
 -read_porcent:Reads the '%' character and processes the next
-				format character in the format string.
+		format character in the format string.
 
 -read_format:Reads the format string format and processes each format character
 
@@ -56,11 +56,9 @@ void rot_print(va_list a, struct Buff *buff);
 			capacity and prints it if needed.
 
 -get_white, get_per and get_param:auxiliary functions used by the
-								'read_porcent()' function to process
-								the different formatting characters.
+				'read_porcent()' function to process the different formatting characters.
 
--get_letter:Converts a number n to a hexadecimal letter and returns it
-			as a character.
+-get_letter:Converts a number n to a hexadecimal letter and returns it as a character.
 
 -print_nill:Prints the character string "(nil)" in the output buffer buff.
 
@@ -83,11 +81,11 @@ format specifier, among others.
 %s -Type a string of characters
 %% -Prints a percentage
 %d -Write a signed decimal integer
-%i -Writes a signed decimal, octal or hexadecimal integer
+%i -Prints integer
 %b -Prints a numbers in binary
 %u -Writes an unsigned decimal integer
 %o -Writes an octal integer, without a leading zero
-%x -Writes a hexadecimal integer without the prefix 0x
+%x -It is a specifier to print a value in hexadecimal format in lowercase.
 %X -Is a specifier to print a value in hexadecimal format in uppercase letters.
 %S -Generates an array of characters and replaces any character that cannot
 	be printed with its hexadecimal representation
